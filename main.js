@@ -2,10 +2,13 @@
 document.getElementById("add-money-btn").addEventListener("click", function(event) {
     event.preventDefault();
 
+    const addSelectIncorrect = document.getElementById("add-select-incorrect");
     const pinIncorrect = document.getElementById("add-pin-incorrect");
     const accountIncorrect = document.getElementById("add-account-incorrect")
     const amountIncorrect = document.getElementById("add-amount-incorrect");
     
+    const addSelectInput = getInputValueById("add-select-input")
+
     const accountInput = getInputValueById("account-input");
 
     const convertAddAmount = getInputValueByIdConverted("add-amount")
@@ -15,55 +18,69 @@ document.getElementById("add-money-btn").addEventListener("click", function(even
     let convertMainBalance = getInnerTextByIdConverted("main-balance");
 
 
-    
-    if (accountInput.length === 11) {
-        accountIncorrect.style.display = "none"
-        if (getInputValueById("add-amount") == "" || convertAddAmount < 0) {
-           
-            amountIncorrect.style.display = "block"
-        }else {
-            amountIncorrect.style.display = "none"
-            if (convertPinInput === 1235) {
-                pinIncorrect.style.display = "none"
-                if ( convertAddAmount < convertMainBalance ) {
-                    const sum = convertAddAmount + convertMainBalance;
-                 setInnerTextValue("main-balance", sum)
-                
-                
-                const transactionSection = document.getElementById("transaction-section");
-
-                const div = document.createElement("div");
-                
-                 div.innerHTML = `
-                
-                     <div class="flex items-center gap-4 ">
-                         <img class="w-14 h-14 bg-white p-2 rounded-full" src="assets/purse1.png" alt="">
-                         <div>
-                             <h5 class="text-[24px]">Add Money</h5>
-                             <p class="font-bold text-[18px] text-white">${convertAddAmount} tk, Account :  ${accountInput}</p>
-                             <p class="text-gray-200">today 01:44 pm</p>
-                         </div>
-                     </div>
-                     <i class="fa-solid fa-ellipsis-vertical mr-3 text-[30px] text-white cursor-pointer"></i>
-                     `;
- 
-                     div.classList.add("bg-gray-400", "p-3", "rounded-lg", "flex", "justify-between","items-center");
- 
-                 
-                    transactionSection.appendChild(div);
-
-                    alert ("Add Money Successful")
-
-                }else {
-                    alert ("Insufficient Balance")
-                }
-            }else {
-                pinIncorrect.style.display = "block"
-            }
-        }
+    if (addSelectInput == "Select Bank") {
+        addSelectIncorrect.style.display = "block"
     }else {
-        accountIncorrect.style.display = "block"
+        addSelectIncorrect.style.display = "none"
+        if (accountInput.length === 11) {
+            accountIncorrect.style.display = "none"
+            if (getInputValueById("add-amount") == "" || convertAddAmount < 0) {
+               
+                amountIncorrect.style.display = "block"
+            }else {
+                amountIncorrect.style.display = "none"
+                if (convertPinInput === 1235) {
+                    pinIncorrect.style.display = "none"
+                    if ( convertAddAmount < convertMainBalance ) {
+                        const sum = convertAddAmount + convertMainBalance;
+                     setInnerTextValue("main-balance", sum)
+                    
+                    
+                    const transactionSection = document.getElementById("transaction-section");
+    
+                    const div = document.createElement("div");
+                    
+                     div.innerHTML = `
+                    
+                         <div class="flex items-center gap-4 ">
+                             <img class="w-14 h-14 bg-white p-2 rounded-full" src="assets/purse1.png" alt="">
+                             <div>
+                                 <h5 class="text-[24px]">Add Money</h5>
+                                 <p class="font-bold text-[18px] text-white">${convertAddAmount} tk, Account :  ${accountInput}</p>
+                                 <p class = "text-[15px] text-white font-bold"> By : ${addSelectInput} </p>
+                                 <p class="text-gray-200">today 01:44 pm</p>
+                             </div>
+                         </div>
+                         <i class="fa-solid fa-ellipsis-vertical mr-3 text-[30px] text-white cursor-pointer"></i>
+                         `;
+     
+                         div.classList.add("bg-gray-400", "p-3", "rounded-lg", "flex", "justify-between","items-center");
+     
+                     
+                        transactionSection.appendChild(div);
+                        clearInputById("account-input");
+                        clearInputById("add-amount");
+                        clearInputById("add-pin-input");
+    
+                        setTimeout(() => 
+                            alert ("Add Money Successful")
+                        , 300);
+    
+                    }else {
+                        alert ("Insufficient Balance")
+                    }
+                }else {
+                    pinIncorrect.style.display = "block"
+                }
+            }
+        }else {
+            accountIncorrect.style.display = "block"
+        }
     }
+   
+
+    // clearInputById("account-input");
+   
 
 
 })
@@ -117,7 +134,13 @@ document.getElementById("agent-money-btn").addEventListener("click", function(e)
 
                     transactionSection.appendChild(div);
 
-                    alert ("Cash Out Successful")
+                    clearInputById("agent-input")
+                    clearInputById("agent-amount-input")
+                    clearInputById("agent-pin-input")
+
+                    setTimeout(() => {
+                        alert ("Cash Out Successful")
+                    }, 300);
 
                 }else {
                 alert ("Insufficient Balance")
@@ -152,7 +175,7 @@ document.getElementById("user-set-money-btn").addEventListener("click", function
 
     if (userAccountInput.length === 11) {
         userAccountIncorrect.style.display = "none"
-        if(userAmount == "" || userAmountConverted < o){
+        if(userAmount == "" || userAmountConverted < 0){
             agentAmountIncorrect.style.display = "block"
         }else {
             agentAmountIncorrect.style.display = "none"
@@ -186,8 +209,12 @@ document.getElementById("user-set-money-btn").addEventListener("click", function
     
                         transactionSection.appendChild(div);
 
-
-                    alert ("Transfer Successful")
+                        clearInputById("user-input")
+                        clearInputById("user-amount-input")
+                        clearInputById("user-pin-input")
+                    setTimeout(() => {
+                        alert ("Transfer Successful")
+                    }, 300);
                 }else {
                     userPinIncorrect.style.display = "block"
                     
@@ -206,9 +233,12 @@ document.getElementById("user-set-money-btn").addEventListener("click", function
 document.getElementById("biller-pay-money-btn").addEventListener("click", function(event) {
     event.preventDefault();
 
+    const billerSelectIncorrect = document.getElementById("biller-select-incorrect")
     const billerAccountIncorrect = document.getElementById("biller-account-incorrect");
     const amountPayIncorrect = document.getElementById("biller-amount-incorrect");
     const billerPinIncorrect = document.getElementById("biller-pin-incorrect");
+
+    const billerSelectInput = getInputValueById("biller-select-input");
 
     const billerAccountNumber = getInputValueById("biller-account-input");
 
@@ -219,53 +249,66 @@ document.getElementById("biller-pay-money-btn").addEventListener("click", functi
 
     let convertMainBalance = getInnerTextByIdConverted("main-balance");
 
-    if (billerAccountNumber.length === 11) {
-        billerAccountIncorrect.style.display = "none"
-        if(billerAmount == "" || billerAmount < 0) {
-            amountPayIncorrect.style.display = "block"
-        }else {
-            amountPayIncorrect.style.display = "none"
-            if (billerPinInputConverted === 12345) {
-                billerAccountIncorrect.style.display = "none"
-                if(billerAmountConverted < convertMainBalance) {
-                    const sum = convertMainBalance - billerAmountConverted;
-                    setInnerTextValue("main-balance", sum)
-
-                    const transactionSection = document.getElementById("transaction-section");
-
-                const div = document.createElement("div");
-                
-                div.innerHTML = `
-               
-                    <div class="flex items-center gap-4 ">
-                        <img class="w-14 h-14 bg-white p-2 rounded-full" src="assets/purse1.png" alt="">
-                        <div>
-                            <h5 class="text-[24px]">Pay Bill</h5>
-                            <p class="font-bold text-[18px] text-white">${billerAmountConverted} tk, Account :  ${billerAccountNumber}</p>
-                            <p class="text-gray-200">today 01:44 pm</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-ellipsis-vertical mr-3 text-[30px] text-white cursor-pointer"></i>
-                    `;
-
-                div.classList.add("bg-gray-400", "p-3", "rounded-lg", "flex", "justify-between","items-center");
-
-                
-                transactionSection.appendChild(div);
-
-                alert ("Bill Pay Successful")
-
-
-                }else {
-                    alert ("Insufficient Balance")
-                }
-            }else {
-                billerAccountIncorrect.style.display = "block"
-            }
-        }
+    if (billerSelectInput === "Select Bank") {
+        billerSelectIncorrect.style.display = "block"
     }else {
-        billerAccountIncorrect.style.display = "block";
+        billerSelectIncorrect.style.display = "none"
+        if (billerAccountNumber.length === 11) {
+            billerAccountIncorrect.style.display = "none"
+            if(billerAmount == "" || billerAmount < 0) {
+                amountPayIncorrect.style.display = "block"
+            }else {
+                amountPayIncorrect.style.display = "none"
+                if (billerPinInputConverted === 12345) {
+                    billerPinIncorrect.style.display = "none"
+                    if(billerAmountConverted < convertMainBalance) {
+                        const sum = convertMainBalance - billerAmountConverted;
+                        setInnerTextValue("main-balance", sum)
+    
+                        const transactionSection = document.getElementById("transaction-section");
+    
+                    const div = document.createElement("div");
+                    
+                    div.innerHTML = `
+                   
+                        <div class="flex items-center gap-4 ">
+                            <img class="w-14 h-14 bg-white p-2 rounded-full" src="assets/purse1.png" alt="">
+                            <div>
+                                <h5 class="text-[24px]">Pay Bill</h5>
+                                <p class="font-bold text-[18px] text-white">${billerAmountConverted} tk, Account :  ${billerAccountNumber}</p>
+                                <p class = "text-[15px] font-bold text-white">In : ${billerSelectInput}
+                                <p class="text-gray-200">today 01:44 pm</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-ellipsis-vertical mr-3 text-[30px] text-white cursor-pointer"></i>
+                        `;
+    
+                    div.classList.add("bg-gray-400", "p-3", "rounded-lg", "flex", "justify-between","items-center");
+    
+                    
+                    transactionSection.appendChild(div);
+    
+                    clearInputById("biller-account-input")
+                    clearInputById("biller-amount-input")
+                    clearInputById("biller-pin-input")
+                    
+                    setTimeout(() => {
+                        alert ("Bill Pay Successful")
+                    }, 300);
+    
+    
+                    }else {
+                        alert ("Insufficient Balance")
+                    }
+                }else {
+                    billerPinIncorrect.style.display = "block"
+                }
+            }
+        }else {
+            billerAccountIncorrect.style.display = "block";
+        }
     }
+    
 })
 
 

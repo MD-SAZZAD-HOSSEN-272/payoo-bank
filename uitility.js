@@ -20,6 +20,10 @@ function setInnerTextValue(id, value) {
     document.getElementById(id).innerText = value;
 }
 
+function clearInputById(id) {
+    document.getElementById(id).value = "";
+}
+
 
 // toggle 
 

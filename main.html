@@ -103,7 +103,8 @@
                 <h1 class="text-[25px] font-bold">Add Money</h1>
                 <form class="space-y-3 mt-4 w-96 mx-auto">
                     <label >Select a Bank</label>
-                    <select class="select select-bordered w-full block mt-2">
+                    <p id="add-select-incorrect" class="text-red-700 hidden">Incorrect account number</p>
+                    <select id="add-select-input" class="select select-bordered w-full block mt-2">
                         <option disabled selected>Select Bank</option>
                         <option>Bkash</option>
                         <option>Nagad</option>
@@ -120,7 +121,7 @@
 
                       <label > Pin </label>
                       <p id="add-pin-incorrect" class="text-red-700 hidden">Incorrect pin number</p>
-                    <input id="add-pin-input" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="text" required class="grow" value="1235" />
+                    <input id="add-pin-input" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="text" required class="grow" placeholder="pin number" />
 
                     <button id="add-money-btn" class="btn w-full bg-blue-700 text-white">Add Money</button>
                 </form>
@@ -132,15 +133,15 @@
                     <form>
                         <label >Agent Number</label>
                         <p id="agent-incorrect" class="text-red-700 hidden">Incorrect agent number</p>
-                        <input id="agent-input" value="01234569878" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Agent Number" />
+                        <input id="agent-input" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Agent Number" />
 
                         <label >Amount</label>
                         <p id="agent-amount-incorrect" class="text-red-700 hidden">Add some positive amount</p>
-                        <input id="agent-amount-input" value="220" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Amount" />
+                        <input id="agent-amount-input" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Amount" />
 
                         <label>Pin Number</label>
                         <p id="agent-pin-incorrect" class="text-red-700 hidden">Incorrect pin number</p>
-                        <input id="agent-pin-input" value="12345" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="password" required class="grow" placeholder="Pin Number" />
+                        <input id="agent-pin-input" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="password" required class="grow" placeholder="Pin Number" />
 
                         <button id="agent-money-btn" class="btn mt-4 w-full bg-blue-700 text-white">Cash Out</button>
                     </form>
@@ -158,15 +159,15 @@
                     <form>
                         <label >User Account Number</label>
                         <p id="user-account-incorrect" class="text-red-700 hidden">Incorrect account number</p>
-                        <input id="user-input" value="01234569878" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Agent Number" />
+                        <input id="user-input" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Agent Number" />
 
                         <label >Amount</label>
                         <p id="agent-amount-incorrect" class="text-red-700 hidden">Add some amount</p>
-                        <input id="user-amount-input" value="220" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Amount" />
+                        <input id="user-amount-input" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Amount" />
 
                         <label>Pin Number</label>
                         <p id="user-pin-incorrect" class="text-red-700 hidden">Incorrect pin number</p>
-                        <input id="user-pin-input"  value="12345" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="password" required class="grow" placeholder="Pin Number" />
+                        <input id="user-pin-input" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="password" required class="grow" placeholder="Pin Number" />
 
                         <button id="user-set-money-btn" class="btn mt-4 w-full bg-blue-700 text-white">Sent Now</button>
                     </form>
@@ -185,7 +186,8 @@
                 <div class="w-96 mx-auto mt-3">
                     <form>
                         <h3>Select to pay</h3>
-                        <select class="select select-bordered mb-4 w-full block mt-2">
+                        <p id="biller-select-incorrect" class="text-red-700 hidden">Please Select</p>
+                        <select id="biller-select-input" class="select select-bordered mb-4 w-full block mt-2">
                             <option disabled selected>Select Bank</option>
                             <option>Bkash</option>
                             <option>Nagad</option>
@@ -193,15 +195,15 @@
                           </select>
                         <label>Biller Account Number</label>
                         <p id="biller-account-incorrect" class="text-red-700 hidden">Incorrect account number</p>
-                        <input id="biller-account-input" value="01234569878" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Biller account number" />
+                        <input id="biller-account-input" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Biller account number" />
 
                         <label >Amount to pay</label>
                         <p id="biller-amount-incorrect" class="text-red-700 hidden">Add some amount</p>
-                        <input id="biller-amount-input" value="220" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="add Amount to pay" />
+                        <input id="biller-amount-input" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="add Amount to pay" />
 
                         <label>Pin Number</label>
                         <p id="biller-pin-incorrect" class="text-red-700 hidden">Incorrect pin number</p>
-                        <input id="biller-pin-input"  value="12345" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="password" required class="grow" placeholder="Pin Number" />
+                        <input id="biller-pin-input" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="password" required class="grow" placeholder="Pin Number" />
 
                         <button id="biller-pay-money-btn" class="btn mt-4 w-full bg-blue-700 text-white">Pay Now</button>
                     </form>
