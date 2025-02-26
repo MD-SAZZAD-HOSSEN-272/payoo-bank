@@ -270,5 +270,5 @@ document.getElementById("biller-pay-money-btn").addEventListener("click", functi
 
 
 document.getElementById("log-out-btn").addEventListener("click", function() {
-    window.location.href = "./home-page.html"
+    window.location.href = "./index.html"
 })
