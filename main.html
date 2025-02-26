@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/452b98e7a9.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-slate-800">
+    <div class="max-w-md min-h-screen bg-white mx-auto">
+        <nav class="flex items-center justify-between p-3">
+            <div class="flex items-center justify-center gap-3">
+                <img src="assets/Group.png" alt="">
+                <div>
+                    <h1 class="font-bold text-[30px]">$ <span id="main-balance">4500</span></h1>
+                    <h5>Available Balance</h5>
+                </div>
+            </div>
+            <button id="log-out-btn" class="btn">LogOut</button>
+        </nav>
+        <hr class="text-gray-300">
+        <main class="my-5 mx-3">
+            <section>
+                <h1 class="text-[25px] font-bold">🔥 Welcome to Payooo!</h1>
+                <p>Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+                <div class="grid grid-cols-3 mt-3 gap-2">
+                    <div id="add-section" class="text-center border bg-gray-200 hover:bg-white transform hover:scale-110 hover:translate-x-2 delay-100 duration-300 hover:z-10 cursor-pointer p-4 border-gray-300 rounded-lg">
+                        <img class="mx-auto" src="assets/wallet1.png" alt="">
+                        <h5>Add Money</h5>
+                    </div>
+                    <div id="coshout-section" class="text-center border bg-gray-200 hover:bg-white transform hover:scale-110 hover:-translate-y-2 delay-100 duration-300 hover:z-10 cursor-pointer p-4 border-gray-300 rounded-lg">
+                        <img class="mx-auto" src="assets/send1.png" alt="">
+                        <h5>Cash Out</h5>
+                    </div>
+                    <div id="transfer-btn" class="text-center border bg-gray-200 hover:bg-white transform hover:scale-110 hover:-translate-x-2 delay-100 duration-300 hover:z-10 cursor-pointer p-4 border-gray-300 rounded-lg">
+                        <img class="mx-auto" src="assets/money1.png" alt="">
+                        <h5>Transfer Money</h5>
+                    </div>
+                    <div id="bonus-btn" class="text-center border bg-gray-200 hover:bg-white transform hover:scale-110 hover:translate-x-2 delay-100 duration-300 hover:z-10 cursor-pointer p-4 border-gray-300 rounded-lg">
+                        <img class="mx-auto" src="assets/bonus1.png" alt="">
+                        <h5>Get Bonus</h5>
+                    </div>
+                    <div id="pay-bill-btn" class="text-center border bg-gray-200 hover:bg-white transform hover:scale-110 hover:-translate-y-2 delay-100 duration-300 hover:z-10 cursor-pointer p-4 border-gray-300 rounded-lg">
+                        <img class="mx-auto" src="assets/purse1.png" alt="">
+                        <h5>Pay Bill</h5>
+                    </div>
+                    <div id="transaction-btn" class="text-center border bg-gray-200 hover:bg-white transform hover:scale-110 hover:-translate-x-2 delay-100 duration-300 hover:z-10 cursor-pointer p-4 border-gray-300 rounded-lg">
+                        <img class="mx-auto" src="assets/transaction1.png" alt="">
+                        <h5>Transaction</h5>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="default-section" class="mt-5 pb-20">
+                <h1 class="text-[25px] font-bold">Latest Payment</h1>
+                <div class="mt-4 space-y-3">
+                    <div class="bg-gray-400 p-3 rounded-lg flex justify-between items-center">
+                        <div class="flex items-center gap-4 ">
+                            <img class="w-14 h-14 bg-white p-2 rounded-full" src="assets/purse1.png" alt="">
+                            <div>
+                                <h5 class="text-[24px]">Electricity Bill</h5>
+                                <p class="text-gray-200">today 01:44 pm</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-ellipsis-vertical mr-3 text-[30px] text-white cursor-pointer"></i>
+                    </div> 
+                    <div class="bg-gray-400 p-3 rounded-lg flex justify-between items-center">
+                        <div class="flex items-center gap-4 ">
+                            <img class="w-14 h-14 bg-white p-2 rounded-full" src="assets/purse1.png" alt="">
+                            <div>
+                                <h5 class="text-[24px]">Electricity Bill</h5>
+                                <p class="text-gray-200">today 01:44 pm</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-ellipsis-vertical mr-3 text-[30px] text-white cursor-pointer"></i>
+                    </div> 
+                    <div class="bg-gray-400 p-3 rounded-lg flex justify-between items-center">
+                        <div class="flex items-center gap-4 ">
+                            <img class="w-14 h-14 bg-white p-2 rounded-full" src="assets/purse1.png" alt="">
+                            <div>
+                                <h5 class="text-[24px]">Electricity Bill</h5>
+                                <p class="text-gray-200">today 01:44 pm</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-ellipsis-vertical mr-3 text-[30px] text-white cursor-pointer"></i>
+                    </div> 
+                    <div class="bg-gray-400 p-3 rounded-lg flex justify-between items-center">
+                        <div class="flex items-center gap-4 ">
+                            <img class="w-14 h-14 bg-white p-2 rounded-full" src="assets/purse1.png" alt="">
+                            <div>
+                                <h5 class="text-[24px]">Electricity Bill</h5>
+                                <p class="text-gray-200">today 01:44 pm</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-ellipsis-vertical mr-3 text-[30px] text-white cursor-pointer"></i>
+                    </div> 
+                </div>
+            </section>
+
+            <section id="add-money-section" class="mt-4 pb-20">
+                <h1 class="text-[25px] font-bold">Add Money</h1>
+                <form class="space-y-3 mt-4 w-96 mx-auto">
+                    <label >Select a Bank</label>
+                    <select class="select select-bordered w-full block mt-2">
+                        <option disabled selected>Select Bank</option>
+                        <option>Bkash</option>
+                        <option>Nagad</option>
+                        <option>DBBL</option>
+                      </select>
+
+                    <label >Account Number</label>
+                    <p id="add-account-incorrect" class="text-red-700 hidden">Incorrect account number</p>
+                    <input id="account-input" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Account Number" />
+
+                    <label >Amount to ADD</label>
+                    <p id="add-amount-incorrect" class="text-red-700 hidden">add some amount</p>
+                    <input id="add-amount" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Amount" />
+
+                      <label > Pin </label>
+                      <p id="add-pin-incorrect" class="text-red-700 hidden">Incorrect pin number</p>
+                    <input id="add-pin-input" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="text" required class="grow" value="1235" />
+
+                    <button id="add-money-btn" class="btn w-full bg-blue-700 text-white">Add Money</button>
+                </form>
+            </section>
+
+            <section id="cash-out-section" class="mt-4 pb-20">
+                <h1 class="text-[25px] font-bold">Cash Out</h1>  
+                <div class="w-96 mx-auto mt-3">
+                    <form>
+                        <label >Agent Number</label>
+                        <p id="agent-incorrect" class="text-red-700 hidden">Incorrect agent number</p>
+                        <input id="agent-input" value="01234569878" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Agent Number" />
+
+                        <label >Amount</label>
+                        <p id="agent-amount-incorrect" class="text-red-700 hidden">Add some positive amount</p>
+                        <input id="agent-amount-input" value="220" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Amount" />
+
+                        <label>Pin Number</label>
+                        <p id="agent-pin-incorrect" class="text-red-700 hidden">Incorrect pin number</p>
+                        <input id="agent-pin-input" value="12345" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="password" required class="grow" placeholder="Pin Number" />
+
+                        <button id="agent-money-btn" class="btn mt-4 w-full bg-blue-700 text-white">Cash Out</button>
+                    </form>
+                </div>      
+            </section>
+
+            <section id="transaction-section" class="space-y-3 mt-4 pb-20">
+                <h1 class="font-bold text-[30px] mt-5">Transaction Information</h1>
+
+            </section>
+
+            <section id="transfer-section" class="space-y-3 mt-4 pb-20">
+                <h1 class="text-[25px] font-bold">Transfer Money</h1>
+                <div class="w-96 mx-auto mt-3">
+                    <form>
+                        <label >User Account Number</label>
+                        <p id="user-account-incorrect" class="text-red-700 hidden">Incorrect account number</p>
+                        <input id="user-input" value="01234569878" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Agent Number" />
+
+                        <label >Amount</label>
+                        <p id="agent-amount-incorrect" class="text-red-700 hidden">Add some amount</p>
+                        <input id="user-amount-input" value="220" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Amount" />
+
+                        <label>Pin Number</label>
+                        <p id="user-pin-incorrect" class="text-red-700 hidden">Incorrect pin number</p>
+                        <input id="user-pin-input"  value="12345" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="password" required class="grow" placeholder="Pin Number" />
+
+                        <button id="user-set-money-btn" class="btn mt-4 w-full bg-blue-700 text-white">Sent Now</button>
+                    </form>
+                </div>      
+            </section>
+            
+            <section id="bonus-section" class="mt-4 pb-20">
+                <h1 class="text-[25px] font-bold">Get Bonus</h1>
+                <label class="mt-20">Enter Your Bonus Coupon</label>
+                        <p id="user-account-incorrect" class="text-red-700 hidden">Incorrect Coupon</p>
+                        <input id="bonus-user-input" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="text" required class="grow" placeholder="Agent Number" />
+            </section>
+
+            <section id="pay-bill-section" class="space-y-3 mt-4 pb-20">
+                <h1 class="text-[25px] font-bold">Pay Bill</h1>
+                <div class="w-96 mx-auto mt-3">
+                    <form>
+                        <h3>Select to pay</h3>
+                        <select class="select select-bordered mb-4 w-full block mt-2">
+                            <option disabled selected>Select Bank</option>
+                            <option>Bkash</option>
+                            <option>Nagad</option>
+                            <option>DBBL</option>
+                          </select>
+                        <label>Biller Account Number</label>
+                        <p id="biller-account-incorrect" class="text-red-700 hidden">Incorrect account number</p>
+                        <input id="biller-account-input" value="01234569878" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="Biller account number" />
+
+                        <label >Amount to pay</label>
+                        <p id="biller-amount-incorrect" class="text-red-700 hidden">Add some amount</p>
+                        <input id="biller-amount-input" value="220" class="input input-bordered flex items-center mb-4 gap-2 mt-2 w-full" type="number" required class="grow" placeholder="add Amount to pay" />
+
+                        <label>Pin Number</label>
+                        <p id="biller-pin-incorrect" class="text-red-700 hidden">Incorrect pin number</p>
+                        <input id="biller-pin-input"  value="12345" class="input input-bordered flex items-center gap-2 mt-2 w-full" type="password" required class="grow" placeholder="Pin Number" />
+
+                        <button id="biller-pay-money-btn" class="btn mt-4 w-full bg-blue-700 text-white">Pay Now</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="uitility.js"></script>
+    <script src="main.js"></script>
+    <script src="toggle.js"></script>
+</body>
+</html>
